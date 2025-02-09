@@ -1,0 +1,23 @@
+#customDropdown {
+  display: none;
+  position: absolute;
+  bottom: 100%;
+  left: 0;
+  background-color: white;
+  border: 1px solid #ccc;
+  z-index: 1;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 5px;
+}
+
+#customDropdown ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+#customDropdown li {
+  text-align: center;
+  color: gray;
+  padding: 5px 0;
+}
