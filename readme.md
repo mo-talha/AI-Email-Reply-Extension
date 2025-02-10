@@ -10,10 +10,7 @@ This Chrome extension empowers users to compose professional and engaging email 
 4. **Seamless Integration:** Integrates seamlessly into the email composition workflow, providing a convenient and user-friendly experience.
 
 **Requirements**
-
-1. Make sure to have latest versions of Node and Python installed locally.
-2. FastAPI
-3. Pydantic
+- Check requirements.txt or pip install requirements.txt
 
 **How it Works:**
 **The extension folder:**
