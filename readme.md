@@ -10,7 +10,7 @@ This Chrome extension empowers users to compose professional and engaging email 
 4. **Seamless Integration:** Integrates seamlessly into the email composition workflow, providing a convenient and user-friendly experience.
 
 **Requirements**
-- Check requirements.txt or pip install requirements.txt
+- Check requirements.txt or pip install requirements.txt in PythonBackend folder.
 
 **How it Works:**
 **The extension folder:**
