@@ -1,11 +1,19 @@
-import requests
 from .email_request import EmailRequest
-# from EmailRequest import EmailRequest
+# from email_request import EmailRequest
+from dotenv import load_dotenv
+import os
+import requests
+
+# Specifying the complete path to .env file
+load_dotenv("C:\Python\EmailGenerator\PythonBackend\.env")
 
 
 class EmailGeneratorService:
-    gemini_api_key = "AIzaSyDYqps0MVGueOodKZKl2AwbpX39KjB63KU"
-    gemini_api_url = f"https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key={gemini_api_key}"
+    def __init__(self):
+        self.gemini_api_key = os.getenv("GEMINI_API_KEY")
+        self.gemini_api_url = os.getenv("GEMINI_API_URL")
+        self.final_url = self.gemini_api_url + self.gemini_api_key
+        print(self.final_url)
 
     def generate_email_reply(self, email_request: EmailRequest) -> str:
         prompt = self.build_prompt(email_request)
@@ -20,7 +28,7 @@ class EmailGeneratorService:
         }
 
         response = requests.post(
-            url=self.gemini_api_url, json=requestBody, headers=headers)
+            url=self.final_url, json=requestBody, headers=headers)
 
         if response.status_code == 200:
             data = response.json()
@@ -48,3 +56,4 @@ if __name__ == "__main__":
     email_request = EmailRequest(
         email_content="Hey there this is John from Google India, it was great meeting at the cloud event.", tone="formal")
     EmailGeneratorService().generate_email_reply(email_request=email_request)
+    # EmailGeneratorService()
